@@ -1,0 +1,17 @@
+{
+		"version": "1.0.0.0",
+		"author": {"name":"alj","email":"connect@alejeune.com"},
+		"resources": [
+			{
+				"resourceId": "rId0",
+				"sourceType": 5,
+				"file": "resources/waterfallStartD2BF53E768064D19AD9FB499E5BCD67A.pbiviz.json"
+			}
+		],
+		"visual": {"name":"waterfallStart","displayName":"waterfallStart","guid":"waterfallStartD2BF53E768064D19AD9FB499E5BCD67A","visualClassName":"Visual","version":"1.0.0.0","description":"WaterfallCustom","supportUrl":"wwww.test.com","gitHubUrl":""},
+		"metadata": {
+			"pbivizjson": {
+				"resourceId": "rId0"
+			}
+		}
+	}
