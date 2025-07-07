@@ -10,8 +10,15 @@ declare class ColorSettingsCardSettings extends FormattingSettingsCard {
     displayName: string;
     slices: Array<FormattingSettingsSlice>;
 }
+declare class DisplaySettingsCardSettings extends FormattingSettingsCard {
+    showTotal: formattingSettings.ToggleSwitch;
+    name: string;
+    displayName: string;
+    slices: Array<FormattingSettingsSlice>;
+}
 export declare class VisualFormattingSettingsModel extends FormattingSettingsModel {
     colorSettings: ColorSettingsCardSettings;
-    cards: ColorSettingsCardSettings[];
+    displaySettings: DisplaySettingsCardSettings;
+    cards: (ColorSettingsCardSettings | DisplaySettingsCardSettings)[];
 }
 export {};

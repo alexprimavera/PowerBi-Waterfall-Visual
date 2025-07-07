@@ -101,6 +101,17 @@
                     }
                 }
             }
+        },
+        "displaySettings": {
+            "displayName": "Display Options",
+            "properties": {
+                "showTotal": {
+                    "displayName": "Show Total",
+                    "type": {
+                        "bool": true
+                    }
+                }
+            }
         }
     }
 }

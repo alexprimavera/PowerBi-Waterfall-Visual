@@ -30,7 +30,20 @@ class ColorSettingsCardSettings extends FormattingSettingsCard {
     slices: Array<FormattingSettingsSlice> = [this.positiveColor, this.negativeColor, this.totalColor];
 }
 
+class DisplaySettingsCardSettings extends FormattingSettingsCard {
+    showTotal = new formattingSettings.ToggleSwitch({
+        name: "showTotal",
+        displayName: "Show Total",
+        value: true
+    });
+
+    name: string = "displaySettings";
+    displayName: string = "Display Options";
+    slices: Array<FormattingSettingsSlice> = [this.showTotal];
+}
+
 export class VisualFormattingSettingsModel extends FormattingSettingsModel {
     colorSettings = new ColorSettingsCardSettings();
-    cards = [this.colorSettings];
+    displaySettings = new DisplaySettingsCardSettings();
+    cards = [this.colorSettings, this.displaySettings];
 }

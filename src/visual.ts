@@ -95,18 +95,19 @@ export class Visual implements IVisual {
             return;
         }
 
+        // Get settings with defaults
+        const positiveColor = this.formattingSettings.colorSettings?.positiveColor?.value?.value || '#2E8B57';
+        const negativeColor = this.formattingSettings.colorSettings?.negativeColor?.value?.value || '#DC143C';
+        const totalColor = this.formattingSettings.colorSettings?.totalColor?.value?.value || '#4682B4';
+        const showTotal = this.formattingSettings.displaySettings?.showTotal?.value ?? true;
+
         // Process the data to create waterfall data points
-        const waterfallData = this.processWaterfallData(categories, values);
+        const waterfallData = this.processWaterfallData(categories, values, showTotal);
 
         if (waterfallData.length === 0) {
             this.plotlyDiv.innerHTML = '<div style="text-align:center; padding:20px;">No data to display</div>';
             return;
         }
-
-        // Get settings with defaults
-        const positiveColor = this.formattingSettings.colorSettings?.positiveColor?.value?.value || '#2E8B57';
-        const negativeColor = this.formattingSettings.colorSettings?.negativeColor?.value?.value || '#DC143C';
-        const totalColor = this.formattingSettings.colorSettings?.totalColor?.value?.value || '#4682B4';
 
         // Create Plotly traces for the waterfall chart
         const traces = this.createPlotlyTraces(waterfallData, positiveColor, negativeColor, totalColor);
@@ -136,7 +137,7 @@ export class Visual implements IVisual {
         }
     }
 
-    private processWaterfallData(categories: any, values: any): WaterfallDataPoint[] {
+    private processWaterfallData(categories: any, values: any, showTotal: boolean): WaterfallDataPoint[] {
         const dataPoints: WaterfallDataPoint[] = [];
         
         console.log('Processing waterfall data:', { categories, values });
@@ -238,17 +239,19 @@ export class Visual implements IVisual {
             }
         }
 
-        // Add total
-        dataPoints.push({
-            category: 'Total',
-            breakdown: '',
-            value: runningTotal,
-            cumulativeValue: runningTotal,
-            isTotal: true,
-            isStart: false,
-            isSubtotal: false,
-            displayLabel: 'Total'
-        });
+        // Add total (only if showTotal is enabled)
+        if (showTotal) {
+            dataPoints.push({
+                category: 'Total',
+                breakdown: '',
+                value: runningTotal,
+                cumulativeValue: runningTotal,
+                isTotal: true,
+                isStart: false,
+                isSubtotal: false,
+                displayLabel: 'Total'
+            });
+        }
 
         console.log('Final waterfall dataPoints:', dataPoints);
         return dataPoints;
