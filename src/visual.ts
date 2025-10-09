@@ -305,7 +305,7 @@ export class Visual implements IVisual {
                 
                 if (point.value >= 0) {
                     // Positive change
-                    base = point.cumulativeValue;
+                    base = point.cumulativeValue - point.value;
                     barValue = point.value;
                 } else {
                     // Negative change
