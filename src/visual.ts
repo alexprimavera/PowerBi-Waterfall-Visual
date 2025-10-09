@@ -304,13 +304,13 @@ export class Visual implements IVisual {
                 const previousCumulative = i > 0 ? dataPoints[i-1].cumulativeValue - point.value : 0;
                 
                 if (point.value >= 0) {
-                    // Positive change: bar starts at previous cumulative
-                    base = previousCumulative;
+                    // Positive change
+                    base = point.cumulativeValue;
                     barValue = point.value;
                 } else {
-                    // Negative change: bar goes down from current cumulative
+                    // Negative change
                     base = point.cumulativeValue;
-                    barValue = -point.value; // Plot as positive height but visually negative
+                    barValue = -point.value; 
                 }
             }
 
