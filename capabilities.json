@@ -1,117 +1,120 @@
 {
-    "privileges": [],
-    "dataRoles": [
-        {
-            "displayName": "Start Value",
-            "name": "startValue",
-            "kind": "Measure"
-        },
-        {
-            "displayName": "Category",
-            "name": "category",
-            "kind": "Grouping"
-        },
-        {
-            "displayName": "Breakdown",
-            "name": "breakdown",
-            "kind": "Grouping"
-        },
-        {
-            "displayName": "Value",
-            "name": "value",
-            "kind": "Measure"
-        }
-    ],
-    "dataViewMappings": [
-        {
-            "categorical": {
-                "categories": {
-                    "select": [
-                        {
-                            "for": {
-                                "in": "category"
-                            }
-                        },
-                        {
-                            "for": {
-                                "in": "breakdown"
-                            }
-                        }
-                    ],
-                    "dataReductionAlgorithm": {
-                        "top": {
-                            "count": 1000
-                        }
-                    }
-                },
-                "values": {
-                    "select": [
-                        {
-                            "bind": {
-                                "to": "startValue"
-                            }
-                        },
-                        {
-                            "bind": {
-                                "to": "value"
-                            }
-                        }
-                    ],
-                    "dataReductionAlgorithm": {
-                        "top": {
-                            "count": 1000
-                        }
-                    }
-                }
-            }
-        }
-    ],
-    "objects": {
-        "colorSettings": {
-            "displayName": "Colors",
-            "properties": {
-                "positiveColor": {
-                    "displayName": "Positive Color",
-                    "type": {
-                        "fill": {
-                            "solid": {
-                                "color": true
-                            }
-                        }
-                    }
-                },
-                "negativeColor": {
-                    "displayName": "Negative Color", 
-                    "type": {
-                        "fill": {
-                            "solid": {
-                                "color": true
-                            }
-                        }
-                    }
-                },
-                "totalColor": {
-                    "displayName": "Total Color",
-                    "type": {
-                        "fill": {
-                            "solid": {
-                                "color": true
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "displaySettings": {
-            "displayName": "Display Options",
-            "properties": {
-                "showTotal": {
-                    "displayName": "Show Total",
-                    "type": {
-                        "bool": true
-                    }
-                }
-            }
-        }
+  "privileges": [],
+  "dataRoles": [
+    {
+      "displayName": "Start Value",
+      "name": "startValue",
+      "kind": "Measure"
+    },
+    {
+      "displayName": "Category",
+      "name": "category",
+      "kind": "Grouping"
+    },
+    {
+      "displayName": "Breakdown",
+      "name": "breakdown",
+      "kind": "Grouping"
+    },
+    {
+      "displayName": "Value",
+      "name": "value",
+      "kind": "Measure"
     }
+  ],
+  "dataViewMappings": [
+    {
+      "categorical": {
+        "categories": {
+          "select": [
+            {
+              "for": {
+                "in": "category"
+              }
+            },
+            {
+              "for": {
+                "in": "breakdown"
+              }
+            }
+          ],
+          "dataReductionAlgorithm": {
+            "top": {
+              "count": 1000
+            }
+          }
+        },
+        "values": {
+          "select": [
+            {
+              "bind": {
+                "to": "startValue"
+              }
+            },
+            {
+              "bind": {
+                "to": "value"
+              }
+            }
+          ],
+          "dataReductionAlgorithm": {
+            "top": {
+              "count": 1000
+            }
+          }
+        }
+      }
+    }
+  ],
+  "objects": {
+    "colorSettings": {
+      "displayName": "Colors",
+      "properties": {
+        "positiveColor": {
+          "displayName": "Positive Color",
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "negativeColor": {
+          "displayName": "Negative Color",
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "totalColor": {
+          "displayName": "Total Color",
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "displaySettings": {
+      "displayName": "Display Options",
+      "properties": {
+        "showTotal": {
+          "displayName": "Show Total",
+          "type": {
+            "bool": true
+          }
+        }
+      }
+    }
+  },
+  "sorting": {
+    "default": {}
+  }
 }
