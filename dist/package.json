@@ -1,29 +1,17 @@
 {
-  "version": "0.0.0.3",
-  "author": {
-    "name": "alj",
-    "email": "connect@alejeune.com"
-  },
-  "resources": [
-    {
-      "resourceId": "rId0",
-      "sourceType": 5,
-      "file": "resources/waterfallStartD2BF53E768064D19AD9FB499E5BCD67A.pbiviz.json"
-    }
-  ],
-  "visual": {
-    "name": "waterfallStart",
-    "displayName": "waterfallStart",
-    "guid": "waterfallStartD2BF53E768064D19AD9FB499E5BCD67A",
-    "visualClassName": "Visual",
-    "version": "0.0.0.2",
-    "description": "WaterfallCustom",
-    "supportUrl": "https://github.com/alexprimavera/PowerBi-Waterfall-Visual",
-    "gitHubUrl": "https://github.com/alexprimavera/PowerBi-Waterfall-Visual"
-  },
-  "metadata": {
-    "pbivizjson": {
-      "resourceId": "rId0"
-    }
-  }
-}
+		"version": "0.0.0.3",
+		"author": {"name":"alj","email":"connect@alejeune.com"},
+		"resources": [
+			{
+				"resourceId": "rId0",
+				"sourceType": 5,
+				"file": "resources/waterfallStartD2BF53E768064D19AD9FB499E5BCD67A.pbiviz.json"
+			}
+		],
+		"visual": {"name":"waterfallStart","displayName":"waterfallStart","guid":"waterfallStartD2BF53E768064D19AD9FB499E5BCD67A","visualClassName":"Visual","version":"0.0.0.3","description":"WaterfallCustom","supportUrl":"https://github.com/alexprimavera/PowerBi-Waterfall-Visual","gitHubUrl":"https://github.com/alexprimavera/PowerBi-Waterfall-Visual"},
+		"metadata": {
+			"pbivizjson": {
+				"resourceId": "rId0"
+			}
+		}
+	}

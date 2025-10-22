@@ -115,6 +115,11 @@
     }
   },
   "sorting": {
-    "default": {}
+    "implicit": {
+      "clausess": [
+        { "role": "category", "direction": 1 },
+        { "role": "breakdown", "direction": 1 }
+      ]
+    }
   }
 }
